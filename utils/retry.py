@@ -1,19 +1,36 @@
 """Decorator for retrying operations with exponential backoff and jitter."""
-import time
-import random
 import functools
 import logging
-from typing import Callable, Any, Tuple, Type
+import random
+import time
+from typing import Any, Callable, Tuple, Type, Union
 
 logger = logging.getLogger(__name__)
+
 
 def retry_with_backoff(
     retries: int = 3,
     initial_delay: float = 0.5,
     backoff_factor: float = 2.0,
-    exceptions: Tuple[Type[Exception], ...] = (Exception,)
+    exceptions: Union[Tuple[Type[Exception], ...], Type[Exception]] = (Exception,),
 ) -> Callable:
     """Retry a function with exponential backoff upon specified exceptions."""
+    if retries < 1:
+        raise ValueError("retries must be at least 1")
+    if initial_delay < 0:
+        raise ValueError("initial_delay must be non-negative")
+    if backoff_factor < 1.0:
+        raise ValueError("backoff_factor must be at least 1.0")
+
+    if isinstance(exceptions, type) and issubclass(exceptions, Exception):
+        exc_types: Tuple[Type[Exception], ...] = (exceptions,)
+    elif isinstance(exceptions, tuple) and all(
+        isinstance(e, type) and issubclass(e, Exception) for e in exceptions
+    ):
+        exc_types = exceptions
+    else:
+        raise TypeError("exceptions must be an Exception subclass or tuple of Exception subclasses")
+
     def decorator(func: Callable) -> Callable:
         @functools.wraps(func)
         def wrapper(*args, **kwargs) -> Any:
@@ -22,7 +39,7 @@ def retry_with_backoff(
             for attempt in range(1, retries + 1):
                 try:
                     return func(*args, **kwargs)
-                except exceptions as e:
+                except exc_types as e:
                     last_err = e
                     if attempt == retries:
                         break
@@ -33,5 +50,7 @@ def retry_with_backoff(
                     time.sleep(sleep_time)
                     delay *= backoff_factor
             raise last_err
+
         return wrapper
+
     return decorator
