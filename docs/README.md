@@ -34,6 +34,7 @@ tests/
 | :--- | :--- | :--- | :--- |
 | **Binary Search** | $O(\log n)$ | $O(\log n)$ | $O(1)$ |
 | **QuickSort (3-Way)** | $O(n \log n)$ | $O(n^2)$ | $O(\log n)$ |
+| **MergeSort** | $O(n \log n)$ | $O(n \log n)$ | $O(n)$ |
 | **LRU Cache** | $O(1)$ | $O(1)$ | $O(n)$ |
 | **Trie Lookup** | $O(k)$ | $O(k)$ | $O(n \cdot k)$ |
 | **Binary Heap (Push/Pop)** | $O(\log n)$ | $O(\log n)$ | $O(n)$ |
