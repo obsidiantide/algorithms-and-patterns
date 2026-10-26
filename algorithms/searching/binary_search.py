@@ -30,3 +30,5 @@ def find_leftmost(arr: Sequence[T], target: T) -> int:
         else:
             right = mid
     return left
+
+# Refined on 2026-10-26
