@@ -16,7 +16,8 @@ algorithms/
 structures/
   ├── lru_cache.py    # O(1) Doubly Linked List cache
   ├── trie.py         # Prefix tree with autocomplete
-  └── heap.py         # Binary min/max heap
+  ├── heap.py         # Binary min/max heap
+  └── disjoint_set.py # Disjoint Set Union (Union-Find) with rank & path compression
 patterns/
   ├── behavioral/     # Strategy, Observer, Command
   ├── creational/     # Factory, Builder, Singleton
@@ -38,6 +39,7 @@ tests/
 | **LRU Cache** | $O(1)$ | $O(1)$ | $O(n)$ |
 | **Trie Lookup** | $O(k)$ | $O(k)$ | $O(n \cdot k)$ |
 | **Binary Heap (Push/Pop)** | $O(\log n)$ | $O(\log n)$ | $O(n)$ |
+| **Disjoint Set (Find/Union)** | $O(\alpha(n))$ | $O(\alpha(n))$ | $O(n)$ |
 
 ## 🧪 Testing
 
