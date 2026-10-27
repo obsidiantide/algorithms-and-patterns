@@ -58,3 +58,9 @@ def test_search_range_all_identical():
     arr = [7, 7, 7, 7]
     assert search_range(arr, 7) == (0, 3)
     assert search_range(arr, 6) is None
+
+
+def test_search_range_single_element():
+    assert search_range([5], 5) == (0, 0)
+    assert search_range([5], 3) is None
+    assert search_range([5], 8) is None
