@@ -1,7 +1,8 @@
 """Binary search implementations with type hints and edge case handling."""
-from typing import Sequence, TypeVar, Optional
+from typing import Optional, Sequence, Tuple, TypeVar
 
 T = TypeVar("T")
+
 
 def binary_search(arr: Sequence[T], target: T) -> Optional[int]:
     """Perform standard binary search on a sorted sequence.
@@ -20,6 +21,7 @@ def binary_search(arr: Sequence[T], target: T) -> Optional[int]:
             right = mid - 1
     return None
 
+
 def find_leftmost(arr: Sequence[T], target: T) -> int:
     """Find index of leftmost insertion point for target in sorted sequence."""
     left, right = 0, len(arr)
@@ -30,3 +32,24 @@ def find_leftmost(arr: Sequence[T], target: T) -> int:
         else:
             right = mid
     return left
+
+
+def find_rightmost(arr: Sequence[T], target: T) -> int:
+    """Find index of rightmost insertion point for target in sorted sequence."""
+    left, right = 0, len(arr)
+    while left < right:
+        mid = left + (right - left) // 2
+        if arr[mid] <= target:
+            left = mid + 1
+        else:
+            right = mid
+    return left
+
+
+def search_range(arr: Sequence[T], target: T) -> Optional[Tuple[int, int]]:
+    """Find the starting and ending index range of target in sorted sequence."""
+    left = find_leftmost(arr, target)
+    if left >= len(arr) or arr[left] != target:
+        return None
+    right = find_rightmost(arr, target) - 1
+    return (left, right)
