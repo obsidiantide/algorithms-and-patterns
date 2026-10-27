@@ -30,3 +30,25 @@ def find_leftmost(arr: Sequence[T], target: T) -> int:
         else:
             right = mid
     return left
+
+def find_rightmost(arr: Sequence[T], target: T) -> int:
+    """Find index of rightmost insertion point for target in sorted sequence."""
+    left, right = 0, len(arr)
+    while left < right:
+        mid = left + (right - left) // 2
+        if arr[mid] <= target:
+            left = mid + 1
+        else:
+            right = mid
+    return left
+
+def search_range(arr: Sequence[T], target: T) -> Optional[tuple[int, int]]:
+    """Find the starting and ending index of a target value in a sorted sequence.
+    
+    Returns (start, end) inclusive, or None if target is not found.
+    """
+    left = find_leftmost(arr, target)
+    right = find_rightmost(arr, target) - 1
+    if left <= right:
+        return (left, right)
+    return None
