@@ -41,6 +41,7 @@ tests/
 | **Trie Lookup** | $O(k)$ | $O(k)$ | $O(n \cdot k)$ |
 | **Binary Heap (Push/Pop)** | $O(\log n)$ | $O(\log n)$ | $O(n)$ |
 | **Disjoint Set (Find/Union)** | $O(\alpha(n))$ | $O(\alpha(n))$ | $O(n)$ |
+| **Topological Sort** | $O(V + E)$ | $O(V + E)$ | $O(V + E)$ |
 
 ## 🧪 Testing
 
