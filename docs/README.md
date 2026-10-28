@@ -43,6 +43,7 @@ tests/
 | **Disjoint Set (Find/Union)** | $O(\alpha(n))$ | $O(\alpha(n))$ | $O(n)$ |
 | **Topological Sort** | $O(V + E)$ | $O(V + E)$ | $O(V + E)$ |
 | **Dijkstra's Algorithm** | $O((V + E) \log V)$ | $O((V + E) \log V)$ | $O(V)$ |
+| **BFS / DFS Traversal** | $O(V + E)$ | $O(V + E)$ | $O(V)$ |
 
 ## 🧪 Testing
 
