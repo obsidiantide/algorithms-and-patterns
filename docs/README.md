@@ -44,6 +44,7 @@ tests/
 | **Topological Sort** | $O(V + E)$ | $O(V + E)$ | $O(V + E)$ |
 | **Dijkstra's Algorithm** | $O((V + E) \log V)$ | $O((V + E) \log V)$ | $O(V)$ |
 | **BFS / DFS Traversal** | $O(V + E)$ | $O(V + E)$ | $O(V)$ |
+| **0-1 Knapsack** | $O(n \cdot W)$ | $O(n \cdot W)$ | $O(W)$ |
 
 ## 🧪 Testing
 
