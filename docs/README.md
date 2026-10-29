@@ -46,6 +46,7 @@ tests/
 | **BFS / DFS Traversal** | $O(V + E)$ | $O(V + E)$ | $O(V)$ |
 | **0-1 Knapsack** | $O(n \cdot W)$ | $O(n \cdot W)$ | $O(W)$ |
 | **Coin Change (Min / Ways)** | $O(n \cdot A)$ | $O(n \cdot A)$ | $O(A)$ |
+| **Longest Common Subsequence** | $O(m \cdot n)$ | $O(m \cdot n)$ | $O(\min(m, n))$ |
 
 ## 🧪 Testing
 
