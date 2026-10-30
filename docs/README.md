@@ -15,6 +15,7 @@ algorithms/
   └── dynamic/        # Knapsack, LCS, Coin change
 structures/
   ├── lru_cache.py    # O(1) Doubly Linked List cache
+  ├── ring_buffer.py  # Fixed-capacity FIFO circular buffer
   ├── trie.py         # Prefix tree with autocomplete
   ├── heap.py         # Binary min/max heap
   └── disjoint_set.py # Disjoint Set Union (Union-Find) with rank & path compression
@@ -38,6 +39,7 @@ tests/
 | **MergeSort** | $O(n \log n)$ | $O(n \log n)$ | $O(n)$ |
 | **HeapSort** | $O(n \log n)$ | $O(n \log n)$ | $O(1)$ |
 | **LRU Cache** | $O(1)$ | $O(1)$ | $O(n)$ |
+| **Ring Buffer (Push/Pop)** | $O(1)$ | $O(1)$ | $O(n)$ |
 | **Trie Lookup** | $O(k)$ | $O(k)$ | $O(n \cdot k)$ |
 | **Binary Heap (Push/Pop)** | $O(\log n)$ | $O(\log n)$ | $O(n)$ |
 | **Disjoint Set (Find/Union)** | $O(\alpha(n))$ | $O(\alpha(n))$ | $O(n)$ |
