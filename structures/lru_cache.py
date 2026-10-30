@@ -2,6 +2,7 @@
 from typing import Dict, Optional, Any
 from dataclasses import dataclass
 
+
 @dataclass
 class Node:
     key: Any
@@ -9,11 +10,13 @@ class Node:
     prev: Optional["Node"] = None
     next: Optional["Node"] = None
 
+
 class LRUCache:
     """Least Recently Used (LRU) Cache.
-    
-    Provides O(1) get and put operations.
+
+    Provides O(1) get, put, peek, and delete operations.
     """
+
     def __init__(self, capacity: int):
         if capacity <= 0:
             raise ValueError("Capacity must be positive integer")
@@ -23,6 +26,12 @@ class LRUCache:
         self.tail = Node(None, None)
         self.head.next = self.tail
         self.tail.prev = self.head
+
+    def __len__(self) -> int:
+        return len(self.cache)
+
+    def __contains__(self, key: Any) -> bool:
+        return key in self.cache
 
     def _remove(self, node: Node) -> None:
         prev_node = node.prev
@@ -38,13 +47,19 @@ class LRUCache:
             self.head.next.prev = node
         self.head.next = node
 
-    def get(self, key: Any) -> Optional[Any]:
+    def get(self, key: Any, default: Optional[Any] = None) -> Optional[Any]:
         if key not in self.cache:
-            return None
+            return default
         node = self.cache[key]
         self._remove(node)
         self._add_to_front(node)
         return node.value
+
+    def peek(self, key: Any, default: Optional[Any] = None) -> Optional[Any]:
+        """Retrieve value without updating recency order."""
+        if key not in self.cache:
+            return default
+        return self.cache[key].value
 
     def put(self, key: Any, value: Any) -> None:
         if key in self.cache:
@@ -59,4 +74,16 @@ class LRUCache:
                 self._remove(lru_node)
                 del self.cache[lru_node.key]
 
-# Refined on 2026-10-20
+    def delete(self, key: Any) -> bool:
+        """Remove a key from the cache. Returns True if removed, False otherwise."""
+        if key not in self.cache:
+            return False
+        node = self.cache.pop(key)
+        self._remove(node)
+        return True
+
+    def clear(self) -> None:
+        """Clear all entries from the cache."""
+        self.cache.clear()
+        self.head.next = self.tail
+        self.tail.prev = self.head
