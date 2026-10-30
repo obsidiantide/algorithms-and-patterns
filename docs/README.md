@@ -35,6 +35,7 @@ tests/
 | Algorithm / Structure | Time Complexity (Avg) | Time Complexity (Worst) | Space Complexity |
 | :--- | :--- | :--- | :--- |
 | **Binary Search** | $O(\log n)$ | $O(\log n)$ | $O(1)$ |
+| **Interpolation Search** | $O(\log(\log n))$ | $O(n)$ | $O(1)$ |
 | **QuickSort (3-Way)** | $O(n \log n)$ | $O(n^2)$ | $O(\log n)$ |
 | **MergeSort** | $O(n \log n)$ | $O(n \log n)$ | $O(n)$ |
 | **HeapSort** | $O(n \log n)$ | $O(n \log n)$ | $O(1)$ |
