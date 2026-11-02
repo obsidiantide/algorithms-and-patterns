@@ -18,7 +18,8 @@ structures/
   ├── ring_buffer.py  # Fixed-capacity FIFO circular buffer
   ├── trie.py         # Prefix tree with autocomplete
   ├── heap.py         # Binary min/max heap
-  └── disjoint_set.py # Disjoint Set Union (Union-Find) with rank & path compression
+  ├── disjoint_set.py # Disjoint Set Union (Union-Find) with rank & path compression
+  └── fenwick_tree.py # Binary Indexed Tree for prefix and range sums
 patterns/
   ├── behavioral/     # Strategy, Observer, Command
   ├── creational/     # Factory, Builder, Singleton
@@ -44,6 +45,7 @@ tests/
 | **Trie Lookup** | $O(k)$ | $O(k)$ | $O(n \cdot k)$ |
 | **Binary Heap (Push/Pop)** | $O(\log n)$ | $O(\log n)$ | $O(n)$ |
 | **Disjoint Set (Find/Union)** | $O(\alpha(n))$ | $O(\alpha(n))$ | $O(n)$ |
+| **Fenwick Tree (Update/Range)** | $O(\log n)$ | $O(\log n)$ | $O(n)$ |
 | **Topological Sort** | $O(V + E)$ | $O(V + E)$ | $O(V + E)$ |
 | **Dijkstra's Algorithm** | $O((V + E) \log V)$ | $O((V + E) \log V)$ | $O(V)$ |
 | **Kruskal's Algorithm (MST)** | $O(E \log E)$ | $O(E \log E)$ | $O(V + E)$ |
