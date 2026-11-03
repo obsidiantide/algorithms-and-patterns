@@ -9,7 +9,7 @@ A curated collection of clean, well-tested implementations of core computer scie
 
 ```text
 algorithms/
-  ├── searching/      # Binary search, bounds, interpolation
+  ├── searching/      # Binary search, bounds, interpolation, quickselect
   ├── sorting/        # QuickSort 3-way, MergeSort, HeapSort
   ├── graphs/         # Dijkstra, Bellman-Ford, Floyd-Warshall, Kruskal (MST), BFS, DFS, Topological sort
   ├── dynamic/        # Knapsack, LCS, Edit distance, Coin change, Kadane
@@ -37,6 +37,7 @@ tests/
 | :--- | :--- | :--- | :--- |
 | **Binary Search** | $O(\log n)$ | $O(\log n)$ | $O(1)$ |
 | **Interpolation Search** | $O(\log(\log n))$ | $O(n)$ | $O(1)$ |
+| **Quickselect** | $O(n)$ | $O(n^2)$ | $O(n)$ |
 | **QuickSort (3-Way)** | $O(n \log n)$ | $O(n^2)$ | $O(\log n)$ |
 | **MergeSort** | $O(n \log n)$ | $O(n \log n)$ | $O(n)$ |
 | **HeapSort** | $O(n \log n)$ | $O(n \log n)$ | $O(1)$ |
