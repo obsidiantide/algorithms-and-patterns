@@ -25,8 +25,9 @@ patterns/
   ├── creational/     # Factory, Builder, Singleton
   └── structural/     # Decorator, Adapter, Facade
 utils/
-  ├── retry.py        # Exponential backoff decorator
-  └── rate_limiter.py # Token Bucket rate limiter
+  ├── retry.py           # Exponential backoff decorator
+  ├── rate_limiter.py    # Token Bucket rate limiter
+  └── circuit_breaker.py # Circuit Breaker fault-tolerance state machine
 tests/
   └── ...             # Comprehensive pytest test suite
 ```
