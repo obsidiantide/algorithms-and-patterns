@@ -12,7 +12,7 @@ algorithms/
   ├── searching/      # Binary search, bounds, interpolation
   ├── sorting/        # QuickSort 3-way, MergeSort, HeapSort
   ├── graphs/         # Dijkstra, Bellman-Ford, Kruskal (MST), BFS, DFS, Topological sort
-  └── dynamic/        # Knapsack, LCS, Coin change, Kadane
+  ├── dynamic/        # Knapsack, LCS, Edit distance, Coin change, Kadane
 structures/
   ├── lru_cache.py    # O(1) Doubly Linked List cache
   ├── ring_buffer.py  # Fixed-capacity FIFO circular buffer
@@ -54,6 +54,7 @@ tests/
 | **0-1 Knapsack** | $O(n \cdot W)$ | $O(n \cdot W)$ | $O(W)$ |
 | **Coin Change (Min / Ways)** | $O(n \cdot A)$ | $O(n \cdot A)$ | $O(A)$ |
 | **Longest Common Subsequence** | $O(m \cdot n)$ | $O(m \cdot n)$ | $O(\min(m, n))$ |
+| **Edit Distance (Levenshtein)** | $O(m \cdot n)$ | $O(m \cdot n)$ | $O(\min(m, n))$ |
 | **Kadane's Algorithm** | $O(n)$ | $O(n)$ | $O(1)$ |
 
 ## 🧪 Testing
