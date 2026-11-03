@@ -11,7 +11,7 @@ A curated collection of clean, well-tested implementations of core computer scie
 algorithms/
   ├── searching/      # Binary search, bounds, interpolation
   ├── sorting/        # QuickSort 3-way, MergeSort, HeapSort
-  ├── graphs/         # Dijkstra, Kruskal (MST), BFS, DFS, Topological sort
+  ├── graphs/         # Dijkstra, Bellman-Ford, Kruskal (MST), BFS, DFS, Topological sort
   └── dynamic/        # Knapsack, LCS, Coin change, Kadane
 structures/
   ├── lru_cache.py    # O(1) Doubly Linked List cache
@@ -48,6 +48,7 @@ tests/
 | **Fenwick Tree (Update/Range)** | $O(\log n)$ | $O(\log n)$ | $O(n)$ |
 | **Topological Sort** | $O(V + E)$ | $O(V + E)$ | $O(V + E)$ |
 | **Dijkstra's Algorithm** | $O((V + E) \log V)$ | $O((V + E) \log V)$ | $O(V)$ |
+| **Bellman-Ford Algorithm** | $O(V \cdot E)$ | $O(V \cdot E)$ | $O(V)$ |
 | **Kruskal's Algorithm (MST)** | $O(E \log E)$ | $O(E \log E)$ | $O(V + E)$ |
 | **BFS / DFS Traversal** | $O(V + E)$ | $O(V + E)$ | $O(V)$ |
 | **0-1 Knapsack** | $O(n \cdot W)$ | $O(n \cdot W)$ | $O(W)$ |
