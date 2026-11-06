@@ -13,6 +13,7 @@ algorithms/
   ├── sorting/        # QuickSort 3-way, MergeSort, HeapSort
   ├── graphs/         # Dijkstra, Bellman-Ford, Floyd-Warshall, Kruskal (MST), BFS, DFS, Topological sort
   ├── dynamic/        # Knapsack, LCS, Edit distance, Coin change, Kadane
+  ├── strings/        # Knuth-Morris-Pratt substring search
 structures/
   ├── lru_cache.py    # O(1) Doubly Linked List cache
   ├── ring_buffer.py  # Fixed-capacity FIFO circular buffer
@@ -59,6 +60,7 @@ tests/
 | **Longest Common Subsequence** | $O(m \cdot n)$ | $O(m \cdot n)$ | $O(\min(m, n))$ |
 | **Edit Distance (Levenshtein)** | $O(m \cdot n)$ | $O(m \cdot n)$ | $O(\min(m, n))$ |
 | **Kadane's Algorithm** | $O(n)$ | $O(n)$ | $O(1)$ |
+| **Knuth-Morris-Pratt Search** | $O(n + m)$ | $O(n + m)$ | $O(m)$ |
 
 ## 🧪 Testing
 
