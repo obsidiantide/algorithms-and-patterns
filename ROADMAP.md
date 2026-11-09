@@ -9,7 +9,7 @@ Backlog grouped by domain. Mark items `- [x]` when done.
 - [ ] Sliding-window rate limiter in `utils/`
 
 ## B. Test coverage
-- [ ] Property-based comparison tests for sorting against `sorted()`
+- [x] Property-based comparison tests for sorting against `sorted()`
 - [ ] Concurrency tests for `RateLimiter` and `CircuitBreaker`
 
 ## C. Architecture and refactoring
