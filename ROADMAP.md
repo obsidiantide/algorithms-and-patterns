@@ -5,7 +5,7 @@ Backlog grouped by domain. Mark items `- [x]` when done.
 ## A. Core features (new algorithms and structures)
 - [x] Knuth-Morris-Pratt substring search (`algorithms/strings/kmp.py`)
 - [x] Segment tree with range-sum and point update
-- [ ] A* pathfinding on a grid
+- [x] A* pathfinding on a grid
 - [ ] Sliding-window rate limiter in `utils/`
 
 ## B. Test coverage

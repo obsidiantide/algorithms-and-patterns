@@ -11,7 +11,7 @@ A curated collection of clean, well-tested implementations of core computer scie
 algorithms/
   ├── searching/      # Binary search, bounds, interpolation, quickselect
   ├── sorting/        # QuickSort 3-way, MergeSort, HeapSort
-  ├── graphs/         # Dijkstra, Bellman-Ford, Floyd-Warshall, Kruskal (MST), BFS, DFS, Topological sort
+  ├── graphs/         # Dijkstra, A* (grid), Bellman-Ford, Floyd-Warshall, Kruskal (MST), BFS, DFS, Topological sort
   ├── dynamic/        # Knapsack, LCS, Edit distance, Coin change, Kadane
   ├── strings/        # Knuth-Morris-Pratt substring search
 structures/
@@ -51,6 +51,7 @@ tests/
 | **Fenwick Tree (Update/Range)** | $O(\log n)$ | $O(\log n)$ | $O(n)$ |
 | **Topological Sort** | $O(V + E)$ | $O(V + E)$ | $O(V + E)$ |
 | **Dijkstra's Algorithm** | $O((V + E) \log V)$ | $O((V + E) \log V)$ | $O(V)$ |
+| **A\* (grid, Manhattan)** | $O(RC \log RC)$ | $O(RC \log RC)$ | $O(RC)$ |
 | **Bellman-Ford Algorithm** | $O(V \cdot E)$ | $O(V \cdot E)$ | $O(V)$ |
 | **Floyd-Warshall Algorithm** | $O(V^3)$ | $O(V^3)$ | $O(V^2)$ |
 | **Kruskal's Algorithm (MST)** | $O(E \log E)$ | $O(E \log E)$ | $O(V + E)$ |
