@@ -2,7 +2,9 @@
 import random
 from typing import List, Sequence, TypeVar
 
-T = TypeVar("T")
+from utils.comparable import Comparable
+
+T = TypeVar("T", bound=Comparable)
 
 
 def quickselect(arr: Sequence[T], k: int) -> T:

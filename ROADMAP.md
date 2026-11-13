@@ -17,6 +17,6 @@ Backlog grouped by domain. Mark items `- [x]` when done.
 - [ ] Share edge-list validation between Bellman-Ford and Floyd-Warshall
 
 ## D. Performance and polish
-- [ ] Add type-checking (mypy) config and fix reported issues
+- [x] Add type-checking (mypy) config and fix reported issues
 - [ ] Benchmark script comparing sorting implementations
 - [ ] CI workflow running pytest on Python 3.10-3.13

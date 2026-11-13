@@ -2,7 +2,9 @@
 import random
 from typing import List, TypeVar
 
-T = TypeVar("T")
+from utils.comparable import Comparable
+
+T = TypeVar("T", bound=Comparable)
 
 def quick_sort(arr: List[T]) -> List[T]:
     """Sort a list using randomized 3-way quicksort in-place."""

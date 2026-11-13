@@ -1,3 +1,9 @@
 [tool.pytest.ini_options]
 pythonpath = ["."]
 testpaths = ["tests"]
+
+[tool.mypy]
+explicit_package_bases = true
+namespace_packages = true
+mypy_path = "."
+files = ["algorithms", "structures", "utils", "patterns"]

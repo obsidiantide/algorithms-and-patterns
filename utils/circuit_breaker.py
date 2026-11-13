@@ -36,6 +36,10 @@ class CircuitBreaker:
         self.recovery_timeout = recovery_timeout
         self.expected_exception = expected_exception
         self.success_threshold = success_threshold
+        self._state: CircuitState = CircuitState.CLOSED
+        self._failure_count = 0
+        self._success_count = 0
+        self._last_state_change = time.monotonic()
         self.reset()
 
     @property

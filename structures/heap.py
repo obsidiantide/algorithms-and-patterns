@@ -1,7 +1,9 @@
 """Binary min/max heap implementation with type hints."""
 from typing import Generic, Iterable, List, Optional, TypeVar
 
-T = TypeVar("T")
+from utils.comparable import Comparable
+
+T = TypeVar("T", bound=Comparable)
 
 
 class BinaryHeap(Generic[T]):

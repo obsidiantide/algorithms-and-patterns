@@ -1,7 +1,9 @@
 """MergeSort implementation with type hints and stability."""
 from typing import List, Sequence, TypeVar
 
-T = TypeVar("T")
+from utils.comparable import Comparable
+
+T = TypeVar("T", bound=Comparable)
 
 
 def merge_sort(arr: Sequence[T]) -> List[T]:

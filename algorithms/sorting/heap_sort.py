@@ -1,7 +1,9 @@
 """In-place HeapSort implementation with type hints."""
 from typing import List, TypeVar
 
-T = TypeVar("T")
+from utils.comparable import Comparable
+
+T = TypeVar("T", bound=Comparable)
 
 
 def _sift_down(arr: List[T], start: int, end: int) -> None:

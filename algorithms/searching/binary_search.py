@@ -1,7 +1,9 @@
 """Binary search implementations with type hints and edge case handling."""
 from typing import Optional, Sequence, Tuple, TypeVar
 
-T = TypeVar("T")
+from utils.comparable import Comparable
+
+T = TypeVar("T", bound=Comparable)
 
 
 def binary_search(arr: Sequence[T], target: T) -> Optional[int]:

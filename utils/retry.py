@@ -3,7 +3,7 @@ import functools
 import logging
 import random
 import time
-from typing import Any, Callable, Tuple, Type, Union
+from typing import Any, Callable, Optional, Tuple, Type, Union
 
 logger = logging.getLogger(__name__)
 
@@ -35,7 +35,7 @@ def retry_with_backoff(
         @functools.wraps(func)
         def wrapper(*args, **kwargs) -> Any:
             delay = initial_delay
-            last_err = None
+            last_err: Optional[Exception] = None
             for attempt in range(1, retries + 1):
                 try:
                     return func(*args, **kwargs)
@@ -49,6 +49,7 @@ def retry_with_backoff(
                     )
                     time.sleep(sleep_time)
                     delay *= backoff_factor
+            assert last_err is not None  # retries >= 1 guarantees an attempt
             raise last_err
 
         return wrapper
