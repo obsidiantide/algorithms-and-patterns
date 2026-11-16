@@ -6,11 +6,11 @@ Backlog grouped by domain. Mark items `- [x]` when done.
 - [x] Knuth-Morris-Pratt substring search (`algorithms/strings/kmp.py`)
 - [x] Segment tree with range-sum and point update
 - [x] A* pathfinding on a grid
-- [ ] Sliding-window rate limiter in `utils/`
+- [x] Sliding-window rate limiter in `utils/sliding_window.py`
 
 ## B. Test coverage
 - [x] Property-based comparison tests for sorting against `sorted()`
-- [ ] Concurrency tests for `RateLimiter` and `CircuitBreaker`
+- [ ] Concurrency tests for `CircuitBreaker` (`TokenBucketRateLimiter` done)
 
 ## C. Architecture and refactoring
 - [ ] Add `__init__.py` packages and a shared `Graph` type alias for graph algorithms
