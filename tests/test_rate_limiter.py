@@ -76,3 +76,28 @@ def test_invalid_tokens_to_consume():
         limiter.consume(0)
     with pytest.raises(ValueError, match="Tokens to consume must be positive"):
         limiter.consume(-2)
+
+
+def test_concurrent_consume_never_exceeds_capacity():
+    import threading
+
+    limiter = TokenBucketRateLimiter(capacity=100, refill_rate=0.0)
+    granted = []
+    barrier = threading.Barrier(8)
+
+    def worker():
+        barrier.wait()
+        count = 0
+        for _ in range(100):
+            if limiter.consume():
+                count += 1
+        granted.append(count)
+
+    threads = [threading.Thread(target=worker) for _ in range(8)]
+    for t in threads:
+        t.start()
+    for t in threads:
+        t.join()
+
+    assert sum(granted) == 100
+    assert limiter.tokens == 0.0
