@@ -10,7 +10,7 @@ Backlog grouped by domain. Mark items `- [x]` when done.
 
 ## B. Test coverage
 - [x] Property-based comparison tests for sorting against `sorted()`
-- [ ] Concurrency tests for `CircuitBreaker` (`TokenBucketRateLimiter` done)
+- [x] Concurrency tests for `CircuitBreaker` and `TokenBucketRateLimiter`
 
 ## C. Architecture and refactoring
 - [ ] Add `__init__.py` packages and a shared `Graph` type alias for graph algorithms
