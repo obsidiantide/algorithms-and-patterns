@@ -1,12 +1,11 @@
 """Floyd-Warshall all-pairs shortest path algorithm."""
-from typing import Dict, Hashable, List, Mapping, Optional, Set, Tuple, TypeVar
+from typing import Dict, Hashable, List, Mapping, Optional, Tuple, TypeVar
+
+from algorithms.graphs._weighted import NegativeCycleError, collect_edges
+
+__all__ = ["NegativeCycleError", "floyd_warshall", "shortest_path"]
 
 T = TypeVar("T", bound=Hashable)
-
-
-class NegativeCycleError(ValueError):
-    """Raised when a negative-weight cycle is detected."""
-    pass
 
 
 def floyd_warshall(
@@ -19,10 +18,7 @@ def floyd_warshall(
     Time Complexity: O(V^3)
     Space Complexity: O(V^2)
     """
-    vertices: Set[T] = set(graph.keys())
-    for neighbors in graph.values():
-        vertices.update(neighbors.keys())
-
+    vertices, edges = collect_edges(graph)
     vertex_list = list(vertices)
     distances: Dict[T, Dict[T, float]] = {
         u: {v: float("inf") for v in vertex_list} for u in vertex_list
@@ -35,12 +31,10 @@ def floyd_warshall(
         distances[u][u] = 0.0
         next_node[u][u] = u
 
-    for u, neighbors in graph.items():
-        for v, weight in neighbors.items():
-            w = float(weight)
-            if w < distances[u][v]:
-                distances[u][v] = w
-                next_node[u][v] = v
+    for u, v, w in edges:
+        if w < distances[u][v]:
+            distances[u][v] = w
+            next_node[u][v] = v
 
     for k in vertex_list:
         dist_k = distances[k]

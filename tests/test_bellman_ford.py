@@ -63,3 +63,8 @@ def test_unreachable_target():
     assert "C" not in distances
     with pytest.raises(ValueError, match="No path found"):
         shortest_path(graph, "A", "C")
+
+
+def test_nan_weight_is_rejected():
+    with pytest.raises(ValueError, match="NaN"):
+        bellman_ford({"a": {"b": float("nan")}}, "a")

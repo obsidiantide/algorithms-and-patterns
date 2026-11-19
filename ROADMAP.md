@@ -14,7 +14,7 @@ Backlog grouped by domain. Mark items `- [x]` when done.
 
 ## C. Architecture and refactoring
 - [ ] Add `__init__.py` packages and a shared `Graph` type alias for graph algorithms
-- [ ] Share edge-list validation between Bellman-Ford and Floyd-Warshall
+- [x] Share edge-list validation between Bellman-Ford and Floyd-Warshall
 
 ## D. Performance and polish
 - [x] Add type-checking (mypy) config and fix reported issues

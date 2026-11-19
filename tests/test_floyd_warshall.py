@@ -76,3 +76,14 @@ def test_non_existent_node_raises():
     graph = {"A": {"B": 1.0}, "B": {}}
     with pytest.raises(ValueError, match="No path found"):
         shortest_path(graph, "A", "Z")
+
+
+def test_nan_weight_is_rejected():
+    with pytest.raises(ValueError, match="NaN"):
+        floyd_warshall({"a": {"b": float("nan")}})
+
+
+def test_negative_cycle_error_is_shared_with_bellman_ford():
+    from algorithms.graphs import bellman_ford
+
+    assert NegativeCycleError is bellman_ford.NegativeCycleError

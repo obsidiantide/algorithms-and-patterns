@@ -1,12 +1,11 @@
 """Bellman-Ford shortest path algorithm with negative cycle detection."""
-from typing import Dict, Hashable, List, Mapping, Optional, Set, Tuple, TypeVar
+from typing import Dict, Hashable, List, Mapping, Optional, Tuple, TypeVar
+
+from algorithms.graphs._weighted import NegativeCycleError, collect_edges
+
+__all__ = ["NegativeCycleError", "bellman_ford", "shortest_path"]
 
 T = TypeVar("T", bound=Hashable)
-
-
-class NegativeCycleError(ValueError):
-    """Raised when a negative-weight cycle is detected."""
-    pass
 
 
 def bellman_ford(
@@ -20,14 +19,8 @@ def bellman_ford(
     Time Complexity: O(V * E)
     Space Complexity: O(V)
     """
-    vertices: Set[T] = {start}
-    edges: List[Tuple[T, T, float]] = []
-
-    for u, neighbors in graph.items():
-        vertices.add(u)
-        for v, weight in neighbors.items():
-            vertices.add(v)
-            edges.append((u, v, float(weight)))
+    vertices, edges = collect_edges(graph)
+    vertices.add(start)
 
     distances: Dict[T, float] = {start: 0.0}
     predecessors: Dict[T, Optional[T]] = {start: None}
